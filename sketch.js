@@ -78,7 +78,7 @@ function draw() {
   background(180);
 
   //displaying score
-  text("Score: " + score, 500, 50);
+  
 
   if (gameState === PLAY) {
     gameOver.visible = false;
@@ -88,7 +88,7 @@ function draw() {
     ground.velocityX = -4;
 
     //scoring
-    score = score + Math.round(frameCount / 60);
+  
 
     if (ground.x < 0) {
       ground.x = ground.width / 2;
@@ -97,6 +97,7 @@ function draw() {
     //jump when the space key is pressed
     if (keyDown("space") && trex.y >= 100) {
       trex.velocityY = -12;
+      jumpSound.play()
     }
 
     //add gravity
